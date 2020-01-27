@@ -2,6 +2,7 @@ import random
 import discord
 from discord.ext import commands, tasks
 from itertools import cycle
+import os
 
 bot = commands.Bot(command_prefix='!!')
 bot.remove_command('help')
@@ -97,4 +98,6 @@ async def 도움말(ctx):
     embed.add_field(name = '!다운로드 [타입]',value = '타입에 알맞은 파일을 업로드하여 출력합니다.\n종류는 !다운로드만 칠경우 더상세히 출력합니다.',inline = False)
 
     await ctx.send(embed = embed)
-bot.run('NjcxMjIyMjQ0MDM4NjcyMzk0.Xi5yzA.i47w5SgUq-ClgMdTP8WuXutsSy0')
+
+  access_token = os.environ["BOT_TOKEN"]  
+  bot.run(access_token)
